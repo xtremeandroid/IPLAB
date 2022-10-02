@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<title>Write classes and inheritance using ES6 with example</title>
+	<head>
+		<script type="text/javascript">
+			class stud
+			{
+				constructor(name, rolln, year)
+				{
+					this.sname=name;
+					this.srolln=rolln;
+					this.syear=year;
+	
+				}
+				placement()
+				{
+					return `Hi I am ${this.sname} my roll Number is ${this.srolln} in ${this.syear} batch`;
+	
+				}
+			}
+	
+			class stud1 extends stud
+			{
+				constructor(name, rolln, year, per)
+				{
+					super(name,rolln,year);
+					this.sper=per;
+	
+				}
+				criteria()
+				{
+					if(this.sper>50)
+					{
+						return ` ${super.placement()} You are eligible for placement because your score is more than required criteria`;
+	
+					}
+					else
+					{
+						return `${super.placement()} Your are not eligible for placement`;
+					}
+				}
+			}
+			let stu1 = new stud1('Ayush', 75, 2022,80);
+			console.log(stu1.criteria());
+	
+			let stu2 = new stud1('Ishaan', 21, 2022,80);
+			console.log(stu2.criteria());
+	
+			let stu3 = new stud1('Akshay', 47, 2022,80);
+			console.log(stu3.criteria());
+		</script>
+	</head>
+</html>
